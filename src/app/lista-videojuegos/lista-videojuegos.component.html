@@ -1,0 +1,53 @@
+<body>
+<div class="container mx-auto" style="text-align: center;">
+  <div class="col">
+    <h1>LISTA DE VIDEOJUEGOS Y CRUD</h1>
+  </div>
+  <br /><br />
+
+  <form class="form-group">
+    <div class="form-group col-md-6 mx-auto">
+      <label for="nombre" style="font-weight: bold;">Nombre</label>
+      <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" [(ngModel)]="cuadroNombre">
+    </div>
+
+    <div class="form-group col-md-6 mx-auto">
+      <label for="desarrolladora" style="font-weight: bold;">Desarrolladora</label>
+      <input type="text" name="desarrolladora" id="desarrolladora" placeholder="Desarrolladora" class="form-control" [(ngModel)]="cuadroDesarrolladora">
+    </div>
+
+    <div class="form-group col-md-6 mx-auto">
+      <label for="consola" style="font-weight: bold;">Consola</label>
+      <input type="text" name="consola" id="consola" placeholder="Consola" class="form-control" [(ngModel)]="cuadroConsola">
+    </div>
+
+    <div class="form-group col-md-6 mx-auto">
+      <label for="anyo" style="font-weight: bold;">Año</label>
+      <input type="number" name="anyo" id="anyo" placeholder="Año" class="form-control" [(ngModel)]="cuadroAnyo">
+    </div>
+
+    <div class="col mx-auto">
+      <button type="submit" class="btn btn-primary" style="margin-top: 25px;" (click)="agregarVideojuego()">Agregar</button>
+    </div>
+  </form>
+</div>
+<br /><br /><br />
+
+<div *ngIf="videojuegos.length > 0" class="container">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let videojuego of videojuegos; let i = index">
+      <div class="card" style="margin-bottom: 10px; border-color: rgb(0, 0, 0);">
+        <div class="card-body">
+          <p>Videojuego {{i + 1}}</p>
+          <h5 class="card-title" style="font-style: italic;">{{ videojuego.nombre }}</h5>
+          <p class="card-text">{{ videojuego.desarrolladora }}</p>
+          <p class="card-text">{{ videojuego.consola }}</p>
+          <p class="card-text">{{ videojuego.anyo }}</p>
+          <button class="btn btn-primary" style="margin-right: 10px; background-color: rgb(31, 167, 160);" (click)="irAEditarVideojuego(i)">Editar</button>
+          <button class="btn btn-secondary" style="background-color: red;" (click)="eliminarVideojuego(i)">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

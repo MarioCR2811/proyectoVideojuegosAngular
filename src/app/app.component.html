@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Angular Videojuegos</a>
+    <div class="collapse navbar-collapse" id="navbarNav" >
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Lista y CRUD</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/informacion">Información</a>
+        </li>
+        <li class="nav-item ml-auto" *ngIf="!estaLogueado()">
+          <a class="nav-link" routerLink="/login" >Login</a>
+        </li>
+        <li class="nav-item" *ngIf="estaLogueado()">
+          <a class="nav-link" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

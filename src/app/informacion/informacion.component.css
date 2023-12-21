@@ -1,0 +1,10 @@
+body {
+    background-image: url('../fondo2.jpg');
+    background-size: auto;
+    height: 100vh;
+}
+
+div{
+    font-size: 20px;
+    margin: 100px;
+}

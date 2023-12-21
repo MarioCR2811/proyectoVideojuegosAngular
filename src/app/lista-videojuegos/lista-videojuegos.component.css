@@ -1,0 +1,15 @@
+body {
+    background-image: url('../fondo2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+label {
+    color : black;
+    text-decoration: underline;
+}
+
+h1{
+    color: red;
+}
